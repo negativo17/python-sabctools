@@ -1,7 +1,7 @@
 %global srcname sabctools
 
 Name:           python-%{srcname}
-Version:        7.1.2
+Version:        8.1.0
 Release:        1%{?dist}
 Summary:        C implementations of functions for use within SABnzbd
 License:        GPLv2+
@@ -56,6 +56,9 @@ SABnzbd:
 %doc README.md
 
 %changelog
+* Wed Jan 31 2024 Simone Caronni <negativo17@gmail.com> - 1:8.1.0-1
+- Update to 8.1.0.
+
 * Sat Nov 11 2023 Simone Caronni <negativo17@gmail.com> - 1:7.1.2-1
 - Downgrade to 7.1.2.
 

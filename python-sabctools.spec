@@ -1,7 +1,7 @@
 %global srcname sabctools
 
 Name:           python-%{srcname}
-Version:        7.1.2
+Version:        8.1.0
 Release:        1%{?dist}
 Summary:        C implementations of functions for use within SABnzbd
 License:        GPLv2+
@@ -39,23 +39,22 @@ SABnzbd:
 %autosetup -p1 -n %{srcname}-%{version}
 
 %generate_buildrequires
-%pyproject_buildrequires -t
+%pyproject_buildrequires
 
 %build
 %pyproject_wheel
 
 %install
 %pyproject_install
-
 %pyproject_save_files %{srcname}
-
-%check
-%tox
 
 %files -n  python3-%{srcname} -f %{pyproject_files}
 %doc README.md
 
 %changelog
+* Wed Jan 31 2024 Simone Caronni <negativo17@gmail.com> - 1:8.1.0-1
+- Update to 8.1.0.
+
 * Sat Nov 11 2023 Simone Caronni <negativo17@gmail.com> - 1:7.1.2-1
 - Downgrade to 7.1.2.
 

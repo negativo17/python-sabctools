@@ -12,6 +12,9 @@ Source0:        %{url}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
 BuildRequires:  python3-devel
+BuildRequires:  python3-pytest
+# From tests/requirements.txt:
+BuildRequires:  python3dist(portend)
 
 %description
 This module implements three main sets of C implementations that are used within
@@ -46,11 +49,10 @@ SABnzbd:
 
 %install
 %pyproject_install
-
 %pyproject_save_files %{srcname}
 
 %check
-%tox
+%pytest
 
 %files -n  python3-%{srcname} -f %{pyproject_files}
 %doc README.md

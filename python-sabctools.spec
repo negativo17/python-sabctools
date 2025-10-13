@@ -2,18 +2,22 @@
 
 Name:           python-%{srcname}
 Version:        8.2.6
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        C implementations of functions for use within SABnzbd
 License:        GPLv2+
 URL:            https://github.com/sabnzbd/%{srcname}
 
 Source0:        %{url}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+# Fix tests on Python 3.14+:
+# https://github.com/sabnzbd/sabctools/commit/b4099d8f574539d66822e1fc8a2e3468967cbe3b
+Patch0:         %{name}-python-3.14.patch
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
 BuildRequires:  python3-devel
 BuildRequires:  python3-pytest
 # From tests/requirements.txt:
+BuildRequires:  python3dist(chardet)
 BuildRequires:  python3dist(portend)
 
 %description
@@ -42,7 +46,7 @@ SABnzbd:
 %autosetup -p1 -n %{srcname}-%{version}
 
 %generate_buildrequires
-%pyproject_buildrequires -t
+%pyproject_buildrequires
 
 %build
 %pyproject_wheel
@@ -58,6 +62,9 @@ SABnzbd:
 %doc README.md
 
 %changelog
+* Mon Oct 13 2025 Simone Caronni <negativo17@gmail.com> - 8.2.6-2
+- Fix tests.
+
 * Tue Sep 02 2025 Simone Caronni <negativo17@gmail.com> - 8.2.6-1
 - Update to 8.2.6.
 

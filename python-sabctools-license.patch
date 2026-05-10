@@ -1,0 +1,11 @@
+diff -Naur sabctools-9.4.0.old/pyproject.toml sabctools-9.4.0/pyproject.toml
+--- sabctools-9.4.0.old/pyproject.toml	2026-05-10 10:22:39.697398393 +0200
++++ sabctools-9.4.0/pyproject.toml	2026-05-10 10:27:18.217523471 +0200
+@@ -12,7 +12,6 @@
+ ]
+ requires-python = ">=3.9"
+ license = "GPL-2.0-or-later"
+-license-files = ["LICENSE.md"]
+ classifiers = [
+     "Programming Language :: Python",
+     "Programming Language :: Python :: 3 :: Only",

@@ -1,14 +1,14 @@
+%global debug_package %{nil}
 %global srcname sabctools
 
 Name:           python-%{srcname}
-Version:        9.4.0
+Version:        9.6.3
 Release:        1%{?dist}
 Summary:        C implementations of functions for use within SABnzbd
 License:        GPLv2+
 URL:            https://github.com/sabnzbd/%{srcname}
 
 Source0:        %{url}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0:         %{name}-license.patch
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
@@ -60,6 +60,9 @@ SABnzbd:
 %doc README.md
 
 %changelog
+* Wed Sep 09 2026 Simone Caronni <negativo17@gmail.com> - 9.6.3-1
+- Update to 9.7.1.
+
 * Sun May 10 2026 Simone Caronni <negativo17@gmail.com> - 9.4.0-1
 - Update to 9.4.0.
 
